@@ -5,6 +5,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import economy.pack.EconModeration;
+import economy.pack.Main;
+
 public class EconCommands extends JavaPlugin {
 	public EconCommands(Main main) {
 
@@ -88,8 +91,9 @@ public class EconCommands extends JavaPlugin {
 		} else if (cmd.getName().equalsIgnoreCase("bal")) {
 			sender.sendMessage(ChatColor.GREEN + "Your current balance is: "
 					+ EconModeration.balance.get(sender.getName() + " Gold!"));
+		} else if (cmd.getName().equalsIgnoreCase("worth")) {
+			sender.sendMessage(ChatColor.GREEN + "The current stocks are: " + DayPassed.worth);
 		}
-
 		return true;
 	}
 

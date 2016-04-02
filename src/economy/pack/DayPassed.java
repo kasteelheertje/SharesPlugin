@@ -19,7 +19,6 @@ public class DayPassed implements Listener {
 			int henk = r.nextInt(worth+(baseworth));
 			worth = henk + baseworth;
 			SharesWorth.randomshares(baseworth, "Apples");
-			SharesWorth.randomshares(baseworth, "Cookies");
 		}
 		return true;
 		

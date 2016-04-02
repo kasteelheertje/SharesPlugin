@@ -2,6 +2,8 @@ package economy.pack;
 
 import java.util.Random;
 
+import economy.pack.Main;
+
 public class SharesWorth {
 	public SharesWorth(Main main) {
 		
