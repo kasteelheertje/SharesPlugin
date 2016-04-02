@@ -19,5 +19,16 @@ public class Economy {
 		EconModeration.setBalance(s, plugin.getConfig().getDouble("balance."+ s));	
 		}
 	}
+	public static void saveShares() {
+	for (String p : Shares.shares.keySet()) {
+		plugin.getConfig().set("shares" + p, Shares.shares.get(p));
+	}
+	}
+	public static void loadShares() {
+		if (plugin.getConfig().contains("shares")) return;
+		for (String s : plugin.getConfig().getConfigurationSection("shares").getKeys(false)) {
+		EconModeration.getShares(s);	
+		}
+	}
 
 }

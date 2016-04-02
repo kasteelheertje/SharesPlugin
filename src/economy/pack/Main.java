@@ -16,13 +16,10 @@ public class Main extends JavaPlugin {
 		Economy.loadBalances();
 		if (!Shares.Sharenames.containsKey("Apples")) {
 			Shares.Sharenames.put("Apples", (double) 90);
+		}
 			if (DayPassed.onDayPassed()) {
 				Shares.Sharenames.put("Apples", (double) 90);
 			}
-		}
-		if (!Shares.Sharenames.containsKey("Cookies")) {
-			Shares.Sharenames.put("Cookies", (double) 90);
-		}
 	}
 	public void onDisable() {
 		getLogger().info("Shares-plugin has been disabled.");

@@ -9,10 +9,11 @@ public class DayPassed implements Listener {
 	public DayPassed(Main main) {
 		main.getServer().getPluginManager().registerEvents(this, main);
 	}
-	public static  void onDayPassed() {
+	static int worth;
+	public static  boolean onDayPassed() {
 		Thread thread = new Thread();
 		for (int i = 0; i <=12000; i++) {
-			int worth = 90;
+			
 			int baseworth = worth;
 			Random r = new Random();
 			int henk = r.nextInt(worth+(baseworth));
@@ -20,6 +21,7 @@ public class DayPassed implements Listener {
 			SharesWorth.randomshares(baseworth, "Apples");
 			SharesWorth.randomshares(baseworth, "Cookies");
 		}
+		return true;
 		
 	}
 

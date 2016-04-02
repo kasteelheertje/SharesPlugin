@@ -15,6 +15,12 @@ public class EconModeration {
 	public static Double getBalance(String player) {
 		return balance.get(player);
 	}
+	public static Double getShares(String player) {
+		return Shares.shares.get(player);
+	}
+	public static void setShares(String player,double amount) {
+		Shares.shares.put(player, amount);
+	}
 	public static boolean hasAccount(String player) {
 		return balance.containsKey(player);
 	}
