@@ -1,4 +1,5 @@
 .classpath
+.settings
 
 # Windows image file caches
 Thumbs.db
