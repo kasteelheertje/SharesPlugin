@@ -1,0 +1,14 @@
+name: SharesPlugin
+developer: kasteelheertje
+main: economy.pack.Main
+version: 1.0
+commands:
+    economy:
+        description: Modify the balances of every player!
+        
+    bal:
+        description: Shows your current balance!
+
+    
+    
+    
