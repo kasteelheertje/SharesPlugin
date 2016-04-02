@@ -88,10 +88,10 @@ public class EconCommands extends JavaPlugin {
 			} else {
 				sender.sendMessage(ChatColor.RED + "Incorrect first argument");
 			}
-		} else if (cmd.getName().equalsIgnoreCase("bal")) {
+		} else if (cmd.getName().equalsIgnoreCase("balance") || cmd.getName().equalsIgnoreCase("bal")) {
 			sender.sendMessage(ChatColor.GREEN + "Your current balance is: "
 					+ EconModeration.balance.get(sender.getName() + " Gold!"));
-		} else if (cmd.getName().equalsIgnoreCase("worth")) {
+		} else if (cmd.getName().equalsIgnoreCase("stocks")) {
 			sender.sendMessage(ChatColor.GREEN + "The current stocks are: " + DayPassed.worth);
 		}
 		return true;

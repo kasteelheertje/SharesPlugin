@@ -20,44 +20,38 @@ public class Shares {
 		shares.put(player, amount);
 	}
 
-	public void buyShares(String player, String sharesname, double price,
-			double amount) {
+	public void buyShares(String player, String sharesname, double price, double amount) {
 		costs = amount * price;
 	}
 
 	public void takeMoney(String player, Double cost) {
-		EconModeration.balance.put(player, EconModeration.balance.get(player)
-				- cost);
+		EconModeration.balance.put(player, EconModeration.balance.get(player) - cost);
 	}
+
 	public void sellShares(String player, String sharesname, double price, double amount) {
 		if (shares.containsKey(player)) {
 			shares.put(player, shares.get(player) - amount);
 		}
 	}
 
-	public boolean onCommand(CommandSender sender, Command cmd, String label,
-			String[] args) {
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		double amount;
-		if (sender instanceof Player
-				&& cmd.getName().equalsIgnoreCase("shares")) {
+		if (sender instanceof Player && cmd.getName().equalsIgnoreCase("shares")) {
 			if (args.length != 3) {
-				sender.sendMessage(ChatColor.RED
-						+ "Correct usage: /shares <buy/sell> <Sharesname> <amount>");
+				sender.sendMessage(ChatColor.RED + "Correct usage: /shares <buy/sell> <Sharesname> <amount>");
 			} else if (args[0].equalsIgnoreCase("buy")) {
 				try {
 					amount = Double.parseDouble(args[1]);
 				} catch (Exception e) {
-					sender.sendMessage(ChatColor.RED
-							+ "You need to enter a number as an amount");
+					sender.sendMessage(ChatColor.RED + "You need to enter a number as an amount");
 					return true;
 
 				}
-				buyShares(sender.getName(), args[1], (double) DayPassed.worth,
-						amount);
+				buyShares(sender.getName(), args[1], (double) DayPassed.worth, amount);
 				giveShares(sender.getName(), amount);
 				takeMoney(sender.getName(), costs);
 			} else if (args[0].equalsIgnoreCase("sell")) {
-				sellShares(sender.getName(), args[1],(double) DayPassed.worth, Double.parseDouble(args[2]));
+				sellShares(sender.getName(), args[1], (double) DayPassed.worth, Double.parseDouble(args[2]));
 
 			}
 		}

@@ -5,15 +5,17 @@ import java.util.Random;
 import economy.pack.Main;
 
 public class SharesWorth {
+
 	public SharesWorth(Main main) {
-		
+
 	}
+
 	public static void randomshares(int worth, String sharename) {
 		int baseworth = worth;
 		Random r = new Random();
-		int henk = r.nextInt(worth+(baseworth));
+		int henk = r.nextInt(worth + (baseworth));
 		worth = henk + baseworth;
-		
+
 	}
 
 }
