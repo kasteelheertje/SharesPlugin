@@ -5,9 +5,15 @@ version: 1.0
 commands:
     economy:
         description: Modify the balances of every player!
+        usage: /economy
         
     bal:
         description: Shows your current balance!
+        usage: /bal
+        
+    worth:
+        description: Shows the current stock!
+        usage: /worth
 
     
     
